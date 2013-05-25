@@ -15,6 +15,8 @@ public class HelloWorld extends Activity {
 // Added comment
     
     // Hans kommentar
+    
+    // Dominik kommentar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
