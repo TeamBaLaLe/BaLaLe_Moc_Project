@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BringMeHome</string>
+    <string name="action_settings">Settings</string>
+    <string name="WelcomeHeader">Welcome</string>
+    <string name="btn_configuration">Configuration</string>
+    <string name="btn_bringMeHome">Bring me Home</string>
+
+</resources>
