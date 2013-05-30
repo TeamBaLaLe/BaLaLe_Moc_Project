@@ -1,7 +1,10 @@
 package com.example.bringmehome;
 
+import com.google.android.gms.common.GooglePlayServicesUtil;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 
 public class Main extends Activity {
@@ -10,6 +13,10 @@ public class Main extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		int available = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
+		System.out.print(available);
+		Log.d("MyActivity", Integer.valueOf(available).toString());
 	}
 
 	@Override
