@@ -6,5 +6,26 @@
     <string name="WelcomeHeader">Welcome</string>
     <string name="btn_configuration">Configuration</string>
     <string name="btn_bringMeHome">Bring me Home</string>
-
+    <string name="btn_save">Save</string>
+	<string name="lbltravelType">Travel Type</string>
+	<string-array name="travelType_array">
+        <item>driving</item>
+        <item>walking</item>
+        <item>bicycling</item>
+        <item>transit</item>
+    </string-array>
+    
+    <!-- Configuration Strings -->
+    <string name="config_Header">Your Home Address</string>
+    <string name="config_Street">Street</string>
+    <string name="config_HouseNumber">Number</string>
+    <string name="config_City">City</string>
+    <string name="config_PostalCode">Postal Code</string>
+    <string name="config_Country">Country</string>
+    
+    <!-- Other Buttons -->
+    <string name="noAddressFoundTitle">Could not find a matching address!</string>
+    <string name="noAddressFoundMessage">We could not find an address, which corresponds to the entered Data.</string>
+    <string name="noAddressFoundTryAgain">Try again</string>
+    <string name="noAddressFoundGoBack">Go back</string>
 </resources>

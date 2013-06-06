@@ -28,6 +28,8 @@
         
         <!-- Start Activity onclick to BringMeHomeButton -->
         <activity android:name="com.example.bringmehome.ShowMap" android:label="@string/app_name"/>
+        <!-- Start Config Activity -->
+        <activity android:name="com.example.bringmehome.Configuration" android:label="@string/btn_configuration"/>
         
         <!-- Data to Setup Maps -->
         <meta-data

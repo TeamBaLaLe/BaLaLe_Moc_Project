@@ -8,6 +8,9 @@
 package com.example.bringmehome;
 
 public final class R {
+    public static final class array {
+        public static final int travelType_array=0x7f080000;
+    }
     public static final class attr {
         /** <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
@@ -183,22 +186,37 @@ containing a value of this type.
     }
     public static final class id {
         public static final int Header=0x7f050005;
-        public static final int action_settings=0x7f050009;
-        public static final int bringmehomeButton=0x7f050007;
+        public static final int action_settings=0x7f050017;
+        public static final int bringmehomeButton=0x7f050008;
+        public static final int config_Header=0x7f05000b;
         public static final int hybrid=0x7f050004;
-        public static final int map=0x7f050008;
+        public static final int lblCity=0x7f050015;
+        public static final int lblCountry=0x7f050012;
+        public static final int lblNumber=0x7f05000f;
+        public static final int lblPostalCode=0x7f050011;
+        public static final int lblStreet=0x7f05000c;
+        public static final int lblTravelType=0x7f050007;
+        public static final int map=0x7f05000a;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int satellite=0x7f050002;
-        public static final int setupButton=0x7f050006;
+        public static final int saveconfig=0x7f050016;
+        public static final int setupButton=0x7f050009;
         public static final int terrain=0x7f050003;
+        public static final int travelType=0x7f050006;
+        public static final int txtCity=0x7f050014;
+        public static final int txtCountry=0x7f050013;
+        public static final int txtHouseNumber=0x7f05000e;
+        public static final int txtPostalCode=0x7f050010;
+        public static final int txtStreet=0x7f05000d;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_showmap=0x7f030001;
+        public static final int configuration=0x7f030002;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
+        public static final int main=0x7f0a0000;
     }
     public static final class string {
         public static final int WelcomeHeader=0x7f060017;
@@ -215,6 +233,7 @@ containing a value of this type.
         public static final int auth_client_requested_by_msg=0x7f060011;
         public static final int btn_bringMeHome=0x7f060019;
         public static final int btn_configuration=0x7f060018;
+        public static final int btn_save=0x7f06001a;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -270,6 +289,15 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f06000e;
+        public static final int config_City=0x7f06001f;
+        public static final int config_Country=0x7f060021;
+        /**  Configuration Strings 
+         */
+        public static final int config_Header=0x7f06001c;
+        public static final int config_HouseNumber=0x7f06001e;
+        public static final int config_PostalCode=0x7f060020;
+        public static final int config_Street=0x7f06001d;
+        public static final int lbltravelType=0x7f06001b;
         /**  Location client code resources (prefix with location_client) 
 
         Begin strings for location.reporting
@@ -281,6 +309,12 @@ containing a value of this type.
         public static final int location_client_ulr_inactive_age_under_13=0x7f060012;
         public static final int location_client_ulr_inactive_age_unknown=0x7f060013;
         public static final int location_client_ulr_inactive_unknown_restriction=0x7f060014;
+        public static final int noAddressFoundGoBack=0x7f060025;
+        public static final int noAddressFoundMessage=0x7f060023;
+        /**  Other Buttons 
+         */
+        public static final int noAddressFoundTitle=0x7f060022;
+        public static final int noAddressFoundTryAgain=0x7f060024;
     }
     public static final class style {
         /** 
@@ -293,11 +327,11 @@ containing a value of this type.
             backward-compatibility can go here.
         
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
+        public static final int AppTheme=0x7f090001;
     }
     public static final class styleable {
         /** Attributes that can be used with a MapAttrs.

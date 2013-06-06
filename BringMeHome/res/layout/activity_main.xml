@@ -18,23 +18,41 @@
         android:text="@string/WelcomeHeader"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Button
-        android:id="@+id/setupButton"
-        style="android:buttonStyle"
+    <Spinner
+        android:id="@+id/travelType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Header"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="104dp"
-        android:text="@string/btn_configuration" />
+        android:layout_centerVertical="true"
+        android:entries="@array/travelType_array"
+        android:prompt="@string/lbltravelType" />
+
+    <TextView
+        android:id="@+id/lblTravelType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/travelType"
+        android:layout_alignLeft="@+id/travelType"
+        android:text="@string/lbltravelType"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
         android:id="@+id/bringmehomeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/setupButton"
+        android:layout_below="@+id/travelType"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="32dp"
         android:text="@string/btn_bringMeHome" />
+
+    <Button
+        android:id="@+id/setupButton"
+        style="android:buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lblTravelType"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:text="@string/btn_configuration" />
 
 </RelativeLayout>
