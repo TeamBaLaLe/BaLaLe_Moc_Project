@@ -11,17 +11,15 @@ import android.util.Log;
 
 import com.example.bringmehome.listeners.MyLocationListener;
 import com.example.bringmehome.objects.MyRouteObject;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 public class ShowMap extends FragmentActivity {
 	private GoogleMap map = null;
 	private LocationManager locationManager = null;
 	private LocationListener listener = null;
-	public final int UPDATE_INTERVAL = 20000;
+	public static final int UPDATE_INTERVAL = 20000;
 	private MyRouteObject route;
 //	private LatLng home = new LatLng(48.239595,16.377801);
 	
@@ -45,15 +43,22 @@ public class ShowMap extends FragmentActivity {
 				}
 				
 			});
-			double dstLat = getIntent().getDoubleExtra("bmh_dstLatitude", 0);
-			double dstLong = getIntent().getDoubleExtra("bmh_dstLongitude", 0);
-			String travelType = getIntent().getStringExtra("bmh_travelType");
+			
+			double dstLat = 0;
+			double dstLong = 0;
+			String travelType = "driving";
+			
+			if (getIntent() != null) {
+				dstLat = getIntent().getDoubleExtra("bmh_dstLatitude", 0);
+				dstLong = getIntent().getDoubleExtra("bmh_dstLongitude", 0);
+				travelType = getIntent().getStringExtra("bmh_travelType");
+			}
 			
 			if ("walking".equals(travelType)
 					|| "bicycling".equals(travelType)) {
 				map.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
 			}
-			// init route Object with destination Point
+			// init route Object width destination Point
 			route = new MyRouteObject(dstLat, dstLong, travelType);
 				
 			
@@ -69,11 +74,20 @@ public class ShowMap extends FragmentActivity {
 	
 	private void requestLocationUpdates() {
 		// update it with time interval
-		String locManager = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ? LocationManager.GPS_PROVIDER : LocationManager.NETWORK_PROVIDER;
-		Location initLoc = locationManager.getLastKnownLocation(locManager);
-		listener.onLocationChanged(initLoc);
-		map.moveCamera(CameraUpdateFactory.newLatLngZoom(route.getSrc(), 18));
-		locationManager.requestLocationUpdates(locManager, UPDATE_INTERVAL, 0, listener);
+		if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, UPDATE_INTERVAL, 0, listener);
+			Location initLoc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+			if (initLoc != null)  {
+				listener.onLocationChanged(initLoc);	
+			}
+		}
+		if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+			locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, UPDATE_INTERVAL, 0, listener);
+			Location initLoc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+			if (initLoc != null)  {
+				listener.onLocationChanged(initLoc);	
+			}
+		}
 	}
 
 	@Override
